@@ -1,7 +1,7 @@
 @extends('inkpress.layouts.default')
 
 @section('content')
-<div class="container" style="padding: 40px 0;">
+<div class="container" style="padding: 40px 20px;">
     <div class="retro-card" style="max-width: 600px; margin: 0 auto;">
         <div class="retro-card-header">
             <h2 style="margin: 0; font-size: 24px;">{{ __('inkpress.searchOrder_title') }}</h2>
@@ -21,7 +21,7 @@
                 <form action="{{ url('search-order-by-sn') }}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group" style="margin-bottom: 16px;">
-                        <input type="text" name="order_sn" placeholder="{{ __('inkpress.search_ddh') }}" required class="retro-input" style="width: 100%; padding: 12px; border: 2px solid var(--retro-black); background: var(--retro-white); font-family: inherit;">
+                        <input type="text" name="order_sn" placeholder="{{ __('inkpress.search_ddh') }}" required class="retro-input" style="width: 100%; padding: 12px; border: 2px solid var(--retro-black); background: var(--retro-white); font-family: inherit; box-sizing: border-box;">
                     </div>
                     <button type="submit" class="btn-retro" style="width: 100%;">{{ __('inkpress.search_now') }}</button>
                 </form>
@@ -32,12 +32,12 @@
                 <form action="{{ url('search-order-by-email') }}" method="post">
                     {{ csrf_field() }}
                     <div class="form-group" style="margin-bottom: 16px;">
-                        <input type="email" name="email" placeholder="{{ __('inkpress.search_email') }}" required class="retro-input" style="width: 100%; padding: 12px; border: 2px solid var(--retro-black); background: var(--retro-white); font-family: inherit;">
+                        <input type="email" name="email" placeholder="{{ __('inkpress.search_email') }}" required class="retro-input" style="width: 100%; padding: 12px; border: 2px solid var(--retro-black); background: var(--retro-white); font-family: inherit; box-sizing: border-box;">
                     </div>
                     
                     @if(dujiaoka_config_get('is_open_search_pwd', \App\Models\BaseModel::STATUS_CLOSE) == \App\Models\BaseModel::STATUS_OPEN)
                     <div class="form-group" style="margin-bottom: 16px;">
-                        <input type="password" name="search_pwd" placeholder="{{ __('inkpress.search_password') }}" required class="retro-input" style="width: 100%; padding: 12px; border: 2px solid var(--retro-black); background: var(--retro-white); font-family: inherit;">
+                        <input type="password" name="search_pwd" placeholder="{{ __('inkpress.search_password') }}" required class="retro-input" style="width: 100%; padding: 12px; border: 2px solid var(--retro-black); background: var(--retro-white); font-family: inherit; box-sizing: border-box;">
                     </div>
                     @endif
 
