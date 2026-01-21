@@ -1,0 +1,440 @@
+/* InkPress Theme - Retro Print Mono Style */
+:root {
+    /* Color System */
+    --retro-white: #FAFAFA;
+    --retro-cream: #F5F3EF;
+    --retro-black: #1A1A1A;
+    --retro-gray-dark: #3A3A3A;
+    --retro-gray-mid: #6B6B6B;
+    --retro-gray-light: #A0A0A0;
+    --retro-border: #2A2A2A;
+    --retro-accent: #E74C3C;
+    --retro-link: #2980B9;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+
+    /* Borders */
+    --border-width: 2px;
+    --border-style: solid;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    background-color: var(--retro-white);
+    color: var(--retro-black);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Fallback for now */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* Prevent horizontal sway */
+}
+
+main,
+.container {
+    flex: 1;
+    /* Pushes footer down */
+    width: 100%;
+    /* Ensure container takes full width available */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Prevent inline whitespace gaps */
+}
+
+/* Rich Content Protections */
+.retro-content img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.retro-content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.retro-content table {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block;
+    overflow-x: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--retro-black);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--retro-accent);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header & Nav */
+.retro-header {
+    background: var(--retro-white);
+    border-bottom: var(--border-width) var(--border-style) var(--retro-border);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.retro-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.retro-logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.retro-logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.retro-nav-container {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--retro-gray-light);
+    border-bottom: 1px solid var(--retro-gray-light);
+    padding: var(--spacing-sm) 0;
+    margin-top: var(--spacing-md);
+}
+
+.retro-nav {
+    display: flex;
+    gap: var(--spacing-xl);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.retro-nav-item a {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding: 4px 0;
+}
+
+.retro-nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--retro-black);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.retro-nav-item a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Hero Section */
+.retro-hero {
+    padding: 80px 0;
+    text-align: center;
+    background-image: radial-gradient(var(--retro-gray-light) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.retro-hero h1 {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Notice Content Styling */
+.retro-notice,
+.retro-notice * {
+    font-size: 18px;
+    color: var(--retro-gray-mid);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+    background-color: transparent !important;
+    border: none !important;
+    /* Ensure no borders from rich text */
+}
+
+/* Components */
+.btn-retro {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--retro-black);
+    color: var(--retro-white);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: var(--border-width) solid var(--retro-black);
+    cursor: pointer;
+    line-height: 1.2;
+    text-align: center;
+    min-width: 80px;
+    box-sizing: border-box !important;
+    /* Force layout fix */
+}
+
+.btn-retro:hover {
+    background: transparent;
+    color: var(--retro-black);
+}
+
+.btn-retro-outline {
+    display: inline-block;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--retro-gray-mid);
+    border: var(--border-width) solid #ccc;
+    /* Unified unified light border */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    line-height: 1.2;
+    text-align: center;
+    min-width: 80px;
+}
+
+.btn-retro-outline:hover {
+    border-color: var(--retro-black);
+    color: var(--retro-black);
+}
+
+/* Dashboard/Card Style */
+.retro-card {
+    background: var(--retro-white);
+    border: var(--border-width) solid var(--retro-border);
+    padding: var(--spacing-lg);
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.retro-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0 var(--retro-black);
+}
+
+.retro-card-header {
+    border-bottom: 1px solid var(--retro-gray-light);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.retro-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--retro-gray-mid);
+    margin: 0;
+}
+
+.retro-price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.retro-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 10px;
+    border: 1px solid var(--retro-black);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* Grid System */
+.retro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+/* Search Bar - Removed */
+
+/* Footer */
+.retro-footer {
+    border-top: var(--border-width) solid var(--retro-border);
+    padding: var(--spacing-xl) 0;
+    margin-top: 80px;
+    background: var(--retro-white);
+}
+
+.brand-showcase {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--retro-gray-light);
+    padding-bottom: var(--spacing-xl);
+}
+
+.brand-item {
+    border: 1px solid var(--retro-gray-light);
+    padding: 12px 24px;
+    color: var(--retro-gray-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+}
+
+/* Modal Styles */
+.retro-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.retro-modal.show {
+    display: flex;
+}
+
+.retro-modal-content {
+    background: var(--retro-white);
+    border: 2px solid var(--retro-black);
+    width: 90%;
+    max-width: 600px;
+    padding: 0;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.retro-modal-header {
+    background: var(--retro-black);
+    color: var(--retro-white);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.retro-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.retro-close {
+    color: var(--retro-white);
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.retro-modal-body {
+    padding: 24px;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+/* Form Elements */
+.retro-input {
+    width: 100%;
+    padding: 12px;
+    border: var(--border-width) solid var(--retro-black);
+    background: var(--retro-white);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box !important;
+}
+
+.retro-input:focus {
+    color: var(--retro-black);
+    box-shadow: 4px 4px 0 var(--retro-black);
+    transform: translate(-2px, -2px);
+}
+
+/* Mobile Responsiveness & Safety Overrides */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 24px !important;
+        /* increased whitespace */
+        padding-right: 24px !important;
+        width: 100% !important;
+    }
+
+    .retro-card {
+        padding: 16px !important;
+        /* Allow card to respect container padding */
+        width: auto !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Force images to fit, no matter what inline styles say */
+    .retro-content img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
+
+    .retro-content {
+        overflow-x: hidden !important;
+    }
+}

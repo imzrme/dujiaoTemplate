@@ -14,10 +14,7 @@ return [
         'unicorn' => '官方[unicorn-独角兽]',
         'luna' => 'Luna[Julyssn]',
         'hyper' => 'hyper[Bimoe]',
-        'riniba_01' => 'riniba_01[riniba]',
-        'riniba_02' => 'riniba_02[riniba]',
-        'riniba_03' => 'riniba_03[riniba]',
-        'riniba_04' => 'riniba_04[riniba]'
+        'inkpress' => 'InkPress[inkpress]'
     ],
     // 语言 
     'language' => [
