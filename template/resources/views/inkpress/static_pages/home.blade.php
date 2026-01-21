@@ -4,7 +4,6 @@
 <!-- Hero Section -->
 <section class="retro-hero">
     <div class="container">
-    <div class="container">
         <!-- Shop Name Removed -->
         <div class="retro-notice">{!! dujiaoka_config_get('notice') !!}</div>
     </div>
