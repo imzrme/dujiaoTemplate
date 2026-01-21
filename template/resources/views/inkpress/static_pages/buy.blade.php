@@ -13,7 +13,7 @@
                 <!-- Left Column: Image -->
                 <div style="flex: 1; min-width: 300px;">
                     <div style="border: 2px solid var(--retro-black); padding: 10px; background: #fff;">
-                        <img src="{{ picture_ulr($picture) }}" alt="{{ $gd_name }}" style="width: 100%; display: block;">
+                        <img src="{{ empty($picture) ? asset('assets/inkpress/images/placeholder.png') : picture_ulr($picture) }}" alt="{{ $gd_name }}" style="width: 100%; display: block;">
                     </div>
                 </div>
 

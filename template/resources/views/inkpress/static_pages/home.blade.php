@@ -48,7 +48,7 @@
                 </div>
                 
                 <div style="height: 150px; background: #f5f5f5; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                    <img src="{{ picture_ulr($good['picture']) }}" alt="{{ $good['gd_name'] }}" style="max-height: 100%; max-width: 100%;">
+                    <img src="{{ empty($good['picture']) ? asset('assets/inkpress/images/placeholder.png') : picture_ulr($good['picture']) }}" alt="{{ $good['gd_name'] }}" style="max-height: 100%; max-width: 100%;">
                 </div>
 
                 <h3>{{ $good['gd_name'] }}</h3>
